@@ -24,22 +24,25 @@ EOF
   default     = {}
 }
 
-variable "selector" {
-  description = "The selector, a map, which is used for dependencies or collaborations."
-  type        = map(any)
-  default     = {}
+#
+# Connection Fields
+#
+
+variable "hosts" {
+  description = "The host list of the PostgreSQL service."
+  type        = list(string)
 }
 
-variable "endpoint_internal" {
-  description = "The internal endpoints of the resource."
+variable "hosts_readonly" {
+  description = "The readonly host list of the PostgreSQL service."
   type        = list(string)
   default     = []
 }
 
-variable "endpoint_internal_readonly" {
-  description = "The internal readonly endpoints of the resource."
-  type        = list(string)
-  default     = []
+variable "port" {
+  description = "The port of the PostgreSQL service."
+  type        = number
+  default     = 5432
 }
 
 variable "database" {
