@@ -48,6 +48,7 @@ variable "port" {
 variable "database" {
   description = "The name of the PostgreSQL database to access."
   type        = string
+  default     = ""
 }
 
 variable "username" {
